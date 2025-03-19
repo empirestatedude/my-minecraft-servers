@@ -1,0 +1,19 @@
+---
+apiVersion: shulkermc.io/v1alpha1
+kind: MinecraftServerFleet
+metadata:
+  name: jai-and-rafa
+spec:
+  clusterRef:
+    name: minecraft-cluster
+  replicas: 1
+  template:
+    spec:
+      clusterRef:
+        name: minecraft-cluster
+      tags:
+        - jai-and-rafa
+      version:
+        channel: Paper
+        name: '1.21.4'
+      config: {}

@@ -12,7 +12,8 @@ spec:
       clusterRef:
         name: minecraft-cluster
       tags:
-        - jai-and-rafa
+        - jai
+        - rafa
       version:
         channel: Paper
         name: '1.21.4'

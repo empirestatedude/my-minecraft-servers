@@ -36,9 +36,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: jai-and-rafa-world
 spec:
-  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
+  storageClassName: longhorn

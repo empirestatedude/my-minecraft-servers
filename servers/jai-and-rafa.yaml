@@ -12,10 +12,9 @@ spec:
       clusterRef:
         name: minecraft-cluster
       podOverrides:
-        containers:
-          volumeMounts:
-            - name: world
-              mountPath: /data
+        volumeMounts:
+          - name: world
+            mountPath: /data
         volumes:
           -  name: world
              persistentVolumeClaim:

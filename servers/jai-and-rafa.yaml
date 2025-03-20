@@ -11,10 +11,33 @@ spec:
     spec:
       clusterRef:
         name: minecraft-cluster
+      podOverrides:
+        containers:
+          volumeMounts:
+            - name: world
+              mountPath: /data
+        volumes:
+          -  name: world
+             persistentVolumeClaim:
+             claimName: jai-and-rafa-world
       tags:
         - jai
         - rafa
       version:
         channel: Paper
-        name: '1.21.4'
+        customJar:
+          url: https://api.purpurmc.org/v2/purpur/1.21.4/latest/download
+        name: "1.21.4"
       config: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jai-and-rafa-world
+spec:
+  storageClassName: longhorn
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

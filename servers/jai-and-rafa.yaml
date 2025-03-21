@@ -17,11 +17,23 @@ spec:
       podOverrides:
         volumeMounts:
           - name: world
-            mountPath: /data
+            mountPath: /data/world
+          - name: nether
+            mountPath: /data/world_nether
+          - name: end
+            mountPath: /data/world_the_end
         volumes:
           -  name: world
              persistentVolumeClaim:
                claimName: jai-and-rafa-world
+               readOnly: false
+          -  name: nether
+             persistentVolumeClaim:
+               claimName: jai-and-rafa-nether
+               readOnly: false
+          -  name: end
+             persistentVolumeClaim:
+               claimName: jai-and-rafa-end
                readOnly: false
       tags:
         - jai
@@ -31,6 +43,30 @@ spec:
         customJar:
           url: https://api.purpurmc.org/v2/purpur/1.21.4/latest/download
         name: "1.21.4"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jai-and-rafa-end
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1.5Gi
+  storageClassName: longhorn
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jai-and-rafa-nether
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1.5Gi
+  storageClassName: longhorn
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

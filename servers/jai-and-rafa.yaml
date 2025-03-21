@@ -1,6 +1,6 @@
 ---
 apiVersion: shulkermc.io/v1alpha1
-kind: MinecraftServerFleet
+kind: MinecraftServer
 metadata:
   name: jai-and-rafa
 spec:

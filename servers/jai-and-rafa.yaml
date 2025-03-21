@@ -9,6 +9,10 @@ spec:
   config:
     disableEnd: false
     disableNether: false
+    plugins:
+      - url: https://hangarcdn.papermc.io/plugins/EngineHub/WorldEdit/versions/7.3.10/PAPER/worldedit-bukkit-7.3.10.jar
+      - url: https://hangarcdn.papermc.io/plugins/Gecolay/GSit/versions/2.1.0/PAPER/GSit-2.1.0.jar
+      - url: https://hangarcdn.papermc.io/plugins/pop4959/Chunky/versions/1.4.28/PAPER/Chunky-Bukkit-1.4.28.jar
   podOverrides:
     volumeMounts:
       - name: world
@@ -35,7 +39,9 @@ spec:
     - rafa
   version:
     channel: Paper
-    name: "1.21.4"
+    customJar:
+      url: https://api.purpurmc.org/v2/purpur/1.21.4/latest/download
+    name: 1.21.4
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

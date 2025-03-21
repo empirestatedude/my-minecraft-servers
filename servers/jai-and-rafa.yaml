@@ -6,7 +6,6 @@ metadata:
 spec:
   clusterRef:
     name: minecraft-cluster
-  replicas: 1
   template:
     spec:
       clusterRef:

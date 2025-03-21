@@ -53,8 +53,8 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: longhorn-xfs
+      storage: 5Gi
+  storageClassName: sata
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -65,8 +65,8 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: longhorn-xfs
+      storage: 5Gi
+  storageClassName: sata
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -78,4 +78,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: longhorn-xfs
+  storageClassName: sata

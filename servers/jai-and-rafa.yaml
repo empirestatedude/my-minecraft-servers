@@ -15,6 +15,11 @@ spec:
         disableEnd: false
         disableNether: false
       podOverrides:
+        env:
+          - name: GID
+            value: "0"
+          - name: UID
+            value: "0"
         volumeMounts:
           - name: world
             mountPath: /data/world
